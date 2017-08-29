@@ -134,7 +134,7 @@ SESSION_CONFIGS = [
         'name': 'leex_pilot_v1',
         'display_name': "LEEX PILOTO",
         'num_demo_participants': 2,
-        'app_sequence': ['dictator', 'trust', 'guess_two_thirds','public_goods', 'payment_info'],
+        'app_sequence': ['ultimatum', 'trust', 'guess_two_thirds','public_goods', 'payment_info'],
     },
     {
         'name': 'public_goods',
@@ -154,12 +154,18 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'app_sequence': ['guess_two_thirds', 'payment_info'],
     },
-    {
-         'name': 'dictator',
-         'display_name': "Dictator Game",
+     {
+         'name': 'ultimatum',
+         'display_name': "Ultimatum (randomized: strategy vs. direct response)",
          'num_demo_participants': 2,
-         'app_sequence': ['dictator', 'payment_info'],
-    },
+         'app_sequence': ['ultimatum', 'payment_info'],
+     },
+    # {
+    #      'name': 'dictator',
+    #      'display_name': "Dictator Game",
+    #      'num_demo_participants': 2,
+    #      'app_sequence': ['dictator', 'payment_info'],
+    # },
     # {
     #     'name': 'survey',
     #     'display_name': "Survey",
@@ -177,12 +183,6 @@ SESSION_CONFIGS = [
     #     'display_name': "Prisoner's Dilemma",
     #     'num_demo_participants': 2,
     #     'app_sequence': ['prisoner', 'payment_info'],
-    # },
-    # {
-    #     'name': 'ultimatum',
-    #     'display_name': "Ultimatum (randomized: strategy vs. direct response)",
-    #     'num_demo_participants': 2,
-    #     'app_sequence': ['ultimatum', 'payment_info'],
     # },
     # {
     #     'name': 'ultimatum_strategy',
