@@ -15,8 +15,8 @@ See https://en.wikipedia.org/wiki/Guess_2/3_of_the_average
 
 
 class Constants(BaseConstants):
-    players_per_group = 3
-    num_rounds = 3
+    players_per_group = 2
+    num_rounds = 2
     name_in_url = 'guess_two_thirds'
 
     jackpot = Currency(100)
