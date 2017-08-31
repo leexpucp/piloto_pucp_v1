@@ -2,14 +2,14 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Your Guess
+    Tu elección
 {% endblock %}
 
 {% block content %}
 
     {% if player.round_number > 1 %}
         <p>
-            Here were the two-thirds-average values in previous rounds:
+            Estos fueron los valores de los 2/3 de los promedios en las rondas anteriores:
             {{ group.two_thirds_avg_history }}
         </p>
     {% endif %}
