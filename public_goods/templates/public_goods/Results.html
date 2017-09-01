@@ -2,7 +2,8 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Resultado
+
+    Resultados
 {% endblock %}
 
 {% block content %}
@@ -10,7 +11,7 @@
 
     <table class="table-condensed" style="width:500px; margin-top:20px;">
         <tr><td>Tú contribuiste:</td><td>{{ player.contribution }}</td></tr>
-        <tr><td>Los otros particpantes contribuyeron:</td><td></td></tr>
+        <tr><td>Otros participantes contribuyeron:</td><td></td></tr>
         {% for p in player.get_others_in_group %}
             <tr><td></td><td>{{ p.contribution }}</td></tr>
         {% endfor %}
@@ -20,11 +21,12 @@
         <tr><td colspan="2"><hr/></td></tr>
 
         <tr><td>Ganancia total del proyecto:</td><td>{{ total_earnings }}</td></tr>
-        <tr><td>Tus ganancias del proyecto:</td><td>{{ group.individual_share }}</td></tr>
+
+        <tr><td>Tu ganancia del proyecto:</td><td>{{ group.individual_share }}</td></tr>
 
         <tr><td colspan="2"><hr/></td></tr>
 
-        <tr><td>Por lo tanto, en total ganaste:</td><td>{{ player.payoff }}</td></tr>
+        <tr><td>Por lo tanto, tu ganancia total es:</td><td>{{ player.payoff }}</td></tr>
 
     </table>
     <p></p>
