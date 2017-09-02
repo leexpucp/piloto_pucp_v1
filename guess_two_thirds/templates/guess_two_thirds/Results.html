@@ -18,20 +18,20 @@
         la elección más próxima fue {{ group.best_guess }}.
     </p>
 
-    <p>El número que seleccionaste fue {{ player.guess }}.</p>
+    <p>El número que seleccionó fue {{ player.guess }}.</p>
 
     <p>
         {% if player.is_winner %}
             {% if group.num_winners > 1 %}
-                Por lo tanto, eres uno de los {{ group.num_winners }} ganadores
+                Por lo tanto, es uno de los {{ group.num_winners }} ganadores
                 que empataron en la elección más próxima.
             {% else %}
-                Por lo tanto, ¡tú ganas!
+                Por lo tanto, ¡usted gana!
             {% endif %}
         {% else %}
-            Por lo tanto, no ganaste.
+            Por lo tanto, no ganó.
         {% endif %}
-    Tu pago es de {{ player.payoff }}.
+    Su pago es de {{ player.payoff }}.
     </p>
 
     {% next_button %}
