@@ -1,20 +1,19 @@
-{% extends "global/Page.html" %}
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Tu elección
+    Tu eleccion
 {% endblock %}
 
 {% block content %}
 
     {% if player.round_number > 1 %}
         <p>
-            Estos fueron los valores de los 2/3 de los promedios en las rondas anteriores:
+            Estos fueron los valores de los 2/3 del promedio en las rondas previas:
             {{ group.two_thirds_avg_history }}
         </p>
     {% endif %}
 
-    {% formfield player.guess with label="Please pick a number from 0 to 100:" %}
+    {% formfield player.guess with label="Por favor selecciona un número entre 0 y 100:" %}
     {% next_button %}
 
     {% include Constants.instructions_template %}
