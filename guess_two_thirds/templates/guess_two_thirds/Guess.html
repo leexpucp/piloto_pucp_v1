@@ -1,7 +1,7 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Tu elección
+    Su elección
 {% endblock %}
 
 {% block content %}
@@ -13,7 +13,7 @@
         </p>
     {% endif %}
 
-    {% formfield player.guess with label="Por favor selecciona un número entre 0 y 100:" %}
+    {% formfield player.guess with label="Por favor seleccione un número entre 0 y 100:" %}
     {% next_button %}
 
     {% include Constants.instructions_template %}
