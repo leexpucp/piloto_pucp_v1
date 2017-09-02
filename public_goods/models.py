@@ -22,6 +22,11 @@ class Constants(BaseConstants):
 
 
 class Subsession(BaseSubsession):
+    def creating_session(self):
+        if self.round_number == 1:
+            self.group_randomly()
+        else:
+            self.group_like_round(1)
     def vars_for_admin_report(self):
         contributions = [p.contribution for p in self.get_players() if p.contribution != None]
         if contributions:

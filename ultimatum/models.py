@@ -33,7 +33,10 @@ class Constants(BaseConstants):
 
 class Subsession(BaseSubsession):
     def creating_session(self):
-        # randomize to treatments
+        if self.round_number == 1:
+            self.group_randomly()
+        else:
+            self.group_like_round(1)
         for g in self.get_groups():
             if 'treatment' in self.session.config:
                 g.use_strategy_method = self.session.config['use_strategy_method']
@@ -42,7 +45,7 @@ class Subsession(BaseSubsession):
 
 
 def question(amount):
-    return 'Would you accept an offer of {}?'.format(c(amount))
+    return 'Acepatarías una oferta de {}?'.format(c(amount))
 
 
 class Group(BaseGroup):

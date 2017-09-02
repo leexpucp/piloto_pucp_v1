@@ -58,14 +58,14 @@ AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
 
 
 # e.g. EUR, CAD, GBP, CHF, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'USD'
+REAL_WORLD_CURRENCY_CODE = 'PEN'
 USE_POINTS = True
 
 
 
 # e.g. en, de, fr, it, ja, zh-hans
 # see: https://docs.djangoproject.com/en/1.9/topics/i18n/#term-language-code
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'es'
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
 INSTALLED_APPS = ['otree']
@@ -85,13 +85,15 @@ DEMO_PAGE_INTRO_TEXT = """
         </a>.
     </li>
 </ul>
-<p>
-    Here are various games implemented with oTree. These games are all open
-    source, and you can modify them as you wish.
-</p>
+
 """
 
 ROOMS = [
+    {
+        'name': 'ECO315',
+        'display_name': 'Grupo de Economía Conductual y Experimental',
+        'participant_label_file': '_rooms/ECO315.txt',
+    },
     {
         'name': 'econ101',
         'display_name': 'Econ 101 class',
@@ -105,7 +107,7 @@ ROOMS = [
 
 
 mturk_hit_settings = {
-    'keywords': ['bonus', 'study'],
+    'keywords': ['economía experimental', 'experimentos'],
     'title': 'Title for your experiment',
     'description': 'Description for your experiment',
     'frame_height': 500,
@@ -123,7 +125,7 @@ mturk_hit_settings = {
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = {
-    'real_world_currency_per_point': 0.00,
+    'real_world_currency_per_point': 0.01,
     'participation_fee': 0.00,
     'doc': "",
     'mturk_hit_settings': mturk_hit_settings,
@@ -132,9 +134,16 @@ SESSION_CONFIG_DEFAULTS = {
 SESSION_CONFIGS = [
     {
         'name': 'leex_pilot_v1',
+        'real_world_currency_per_point': 0.01,
         'display_name': "LEEX PILOTO",
         'num_demo_participants': 2,
-        'app_sequence': ['ultimatum', 'trust', 'guess_two_thirds','public_goods', 'payment_info'],
+        'app_sequence': ['ultimatum', 'guess_two_thirds', 'public_goods', 'trust', 'payment_info'],
+    },
+    {
+        'name': 'prueba_aleatorizacion',
+        'display_name': "Ultimatum-beauty",
+        'num_demo_participants': 2,
+        'app_sequence': ['ultimatum', 'guess_two_thirds'],
     },
     {
         'name': 'public_goods',
