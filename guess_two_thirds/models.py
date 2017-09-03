@@ -15,11 +15,11 @@ See https://en.wikipedia.org/wiki/Guess_2/3_of_the_average
 
 
 class Constants(BaseConstants):
-    players_per_group = 2
+    players_per_group = 4     #poner 8 o 16
     num_rounds = 2
     name_in_url = 'guess_two_thirds'
 
-    jackpot = Currency(100)
+    jackpot = Currency(5)
     guess_max = 100
 
     instructions_template = 'guess_two_thirds/Instructions.html'

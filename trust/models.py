@@ -17,22 +17,18 @@ tripled. The trust game was first proposed by
 class Constants(BaseConstants):
     name_in_url = 'trust'
     players_per_group = 2
-    num_rounds = 1
+    num_rounds = 2
 
     instructions_template = 'trust/Instructions.html'
 
     # Initial amount allocated to each player
-    endowment = c(100)
+    endowment = c(5)
     multiplication_factor = 3
 
 
 class Subsession(BaseSubsession):
     def creating_session(self):
-        if self.round_number == 1:
-            self.group_randomly()
-        else:
-            self.group_like_round(1)
-
+        self.group_randomly()
 
 class Group(BaseGroup):
     sent_amount = models.CurrencyField(

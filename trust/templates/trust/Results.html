@@ -2,7 +2,7 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Resutados
+    Resultados
 {% endblock %}
 
 {% block content %}
@@ -10,13 +10,13 @@
     {% if player.role == 'A' %}
         <p>
             Usted decidió enviar al participante B {{ group.sent_amount }}.
-            Y el participante B le retornó {{ group.sent_back_amount }}.
+            Y el participante B retornó {{ group.sent_back_amount }}.
         </p>
         <p>
             A usted se le dio inicialmente {{ Constants.endowment }},
-            y escogió enviar {{ group.sent_amount }},
+             escogió enviar {{ group.sent_amount }},
             recibió {{ group.sent_back_amount }} del participante B
-            Y por lo tanto cuenta con:
+            y por lo tanto cuenta con:
             {{ Constants.endowment }}-{{ group.sent_amount }}+{{ group.sent_back_amount }}=<strong>{{ player.payoff }}</strong>
 
         </p>

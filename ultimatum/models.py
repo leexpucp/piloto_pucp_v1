@@ -15,11 +15,11 @@ In the latter treatment, the second player is given a list of all possible offer
 class Constants(BaseConstants):
     name_in_url = 'ultimatum'
     players_per_group = 2
-    num_rounds = 1
+    num_rounds = 3
 
     instructions_template = 'ultimatum/Instructions.html'
 
-    endowment = c(100)
+    endowment = c(5)
     payoff_if_rejected = c(0)
     offer_increment = c(10)
 
@@ -33,10 +33,8 @@ class Constants(BaseConstants):
 
 class Subsession(BaseSubsession):
     def creating_session(self):
-        if self.round_number == 1:
-            self.group_randomly()
-        else:
-            self.group_like_round(1)
+        self.group_randomly()
+
         for g in self.get_groups():
             if 'treatment' in self.session.config:
                 g.use_strategy_method = self.session.config['use_strategy_method']

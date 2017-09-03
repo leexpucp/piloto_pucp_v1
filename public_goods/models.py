@@ -11,13 +11,13 @@ This is a one-period public goods game with 3 players.
 
 class Constants(BaseConstants):
     name_in_url = 'public_goods'
-    players_per_group = 2
-    num_rounds = 1
+    players_per_group = 4
+    num_rounds = 10
 
     instructions_template = 'public_goods/Instructions.html'
 
     # """Amount allocated to each player"""
-    endowment = c(100)
+    endowment = c(5)
     multiplier = 2
 
 
