@@ -90,6 +90,11 @@ DEMO_PAGE_INTRO_TEXT = """
 
 ROOMS = [
     {
+        'name': 'EconoLab',
+        'display_name': 'Laboratorio de Economía',
+        'participant_label_file': '_rooms/econolab.txt',
+    },
+    {
         'name': 'ECO315',
         'display_name': 'Grupo de Economía Conductual y Experimental',
         'participant_label_file': '_rooms/ECO315.txt',
