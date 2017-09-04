@@ -21,7 +21,7 @@ class Constants(BaseConstants):
 
     endowment = c(5)
     payoff_if_rejected = c(0)
-    offer_increment = c(10)
+    offer_increment = c(1)
 
     offer_choices = currency_range(0, endowment, offer_increment)
     offer_choices_count = len(offer_choices)

@@ -5,9 +5,8 @@ from .models import Constants
 
 
 class Introduction(Page):
-    """Description of the game: How to play and returns expected"""
-    pass
-
+    def is_displayed(self):
+        return self.round_number == 1
 
 class Contribute(Page):
     """Player: Choose how much to contribute"""

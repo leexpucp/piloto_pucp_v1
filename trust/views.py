@@ -5,8 +5,8 @@ from .models import Constants
 
 
 class Introduction(Page):
-    pass
-
+    def is_displayed(self):
+        return self.round_number == 1
 
 class Send(Page):
     """This page is only for P1
