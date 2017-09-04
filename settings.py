@@ -137,7 +137,7 @@ SESSION_CONFIGS = [
         'real_world_currency_per_point': 0.01,
         'display_name': "LEEX PILOTO",
         'num_demo_participants': 4,
-        'app_sequence': ['ultimatum', 'guess_two_thirds', 'public_goods', 'trust', 'payment_info'],
+        'app_sequence': ['ultimatum', 'public_goods', 'trust', 'guess_two_thirds', 'payment_info'],
     },
     {
         'name': 'prueba_aleatorizacion',
@@ -166,7 +166,7 @@ SESSION_CONFIGS = [
      {
          'name': 'ultimatum',
          'display_name': "Ultimatum (randomized: strategy vs. direct response)",
-         'num_demo_participants': 2,
+         'num_demo_participants': 4,
          'app_sequence': ['ultimatum', 'payment_info'],
      },
     # {
