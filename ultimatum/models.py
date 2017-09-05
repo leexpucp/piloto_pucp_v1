@@ -5,10 +5,10 @@ from otree.api import (
 import random
 
 doc = """
-Ultimatum game with two treatments: direct response and strategy method.
+Ultimatum game with two treatments: direct response 
 In the former, one player makes an offer and the other either accepts or rejects.
-It comes in two flavors, with and without hypothetical questions about the second player's response to offers other than the one that is made.
-In the latter treatment, the second player is given a list of all possible offers, and is asked which ones to accept or reject.
+It comes in two flavors, with and without hypothetical questions about the second player's 
+response to offers other than the one that is made.
 """
 
 
@@ -30,7 +30,6 @@ class Constants(BaseConstants):
     for offer in offer_choices:
         keep_give_amounts.append((offer, endowment - offer))
 
-
 class Subsession(BaseSubsession):
     def creating_session(self):
         self.group_randomly(fixed_id_in_group=True)
@@ -40,7 +39,6 @@ class Subsession(BaseSubsession):
                 #g.use_strategy_method = self.session.config['use_strategy_method']
             #else:
              #   g.use_strategy_method = random.choice([True, False])
-
 
 def question(amount):
     return 'Acepatarías una oferta de {}?'.format(c(amount))
