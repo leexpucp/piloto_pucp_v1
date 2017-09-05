@@ -58,7 +58,7 @@ AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
 
 
 # e.g. EUR, CAD, GBP, CHF, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'PEN'
+REAL_WORLD_CURRENCY_CODE = 'soles'
 USE_POINTS = False
 
 
@@ -89,6 +89,11 @@ DEMO_PAGE_INTRO_TEXT = """
 """
 
 ROOMS = [
+    {
+        'name': 'EconoLab',
+        'display_name': 'Laboratorio de Economía',
+        'participant_label_file': '_rooms/econolab.txt',
+    },
     {
         'name': 'ECO315',
         'display_name': 'Grupo de Economía Conductual y Experimental',

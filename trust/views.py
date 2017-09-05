@@ -20,6 +20,11 @@ class Send(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
 
+    def vars_for_template(self):
+        amount = Constants.endowment
+
+        return{
+                'amount': amount }
 
 class SendBackWaitPage(WaitPage):
     pass
@@ -37,6 +42,7 @@ class SendBack(Page):
 
     def vars_for_template(self):
         tripled_amount = self.group.sent_amount * Constants.multiplication_factor
+        amount=Constants.endowment
 
         return {
                 'tripled_amount': tripled_amount,
