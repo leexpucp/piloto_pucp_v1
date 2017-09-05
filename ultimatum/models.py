@@ -15,11 +15,11 @@ response to offers other than the one that is made.
 class Constants(BaseConstants):
     name_in_url = 'ultimatum'
     players_per_group = 2
-    num_rounds = 3
+    num_rounds = 10
 
     instructions_template = 'ultimatum/Instructions.html'
 
-    endowment = c(5)
+    endowment = c(10)
     payoff_if_rejected = c(0)
     offer_increment = c(1)
 

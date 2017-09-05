@@ -5,6 +5,8 @@ from .models import Constants
 
 
 class Introduction(Page):
+    wait_for_all_groups = True
+
     def is_displayed(self):
         return self.round_number == 1
 
@@ -27,7 +29,6 @@ class Accept(Page):
 
     def is_displayed(self):
         return self.player.id_in_group == 2   #and not self.group.use_strategy_method
-
 
 
 #
@@ -53,6 +54,5 @@ page_sequence = [Introduction,
                  Offer,
                  WaitForProposer,
                  Accept,
-                 # AcceptStrategy,
                  ResultsWaitPage,
                  Results]
