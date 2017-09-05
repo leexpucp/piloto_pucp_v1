@@ -169,7 +169,7 @@ SESSION_CONFIGS = [
         'name': 'trust',
         'display_name': "Trust Game",
         'num_demo_participants': 2,
-        'app_sequence': ['trust', 'payment_info'],
+        'app_sequence': ['trust'],
     },
     {
         'name': 'guess_two_thirds',
@@ -202,8 +202,8 @@ SESSION_CONFIGS = [
          'app_sequence': ['survey', 'payment_info'],
      },
     {
-        'name': 'Session_Order_1',
-        'display_name': "Session_Order_1 UG PG TG BC",
+        'name': 'Session_Real',
+        'display_name': "Session Real LEEX 1",
         'num_demo_participants': 4,
             # 'rounds_per_game' : 2,
         'app_sequence': config_leex_1.app_sequence

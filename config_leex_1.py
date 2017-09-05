@@ -1,7 +1,7 @@
 # CONFIG PARAMETERS LEEX EXPERIMENTS SET 2017
 
 
-app_sequence = ['ultimatum', 'public_goods']
+app_sequence = ['ultimatum', 'public_goods', 'trust']
 
 
 UG_number_rounds = 3

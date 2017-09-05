@@ -2,40 +2,35 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Resultados
+    Resultados (Ronda {{ group.round_number }})
 {% endblock %}
 
 {% block content %}
 
     {% if player.role == 'A' %}
         <p>
-            Usted decidió enviar al participante B {{ group.sent_amount }}.
-            Y el participante B retornó {{ group.sent_back_amount }}.
-        </p>
-        <p>
-            A usted se le dio inicialmente {{ Constants.endowment }},
-             escogió enviar {{ group.sent_amount }},
-            recibió {{ group.sent_back_amount }} del participante B
-            y por lo tanto cuenta con:
-            {{ Constants.endowment }}-{{ group.sent_amount }}+{{ group.sent_back_amount }}=<strong>{{ player.payoff }}</strong>
+            Dotación: {{ Constants.endowment }} </br></br>
+            Monto enviado al participante de rol B: {{ group.sent_amount }}. </br>
+            Monto enviado triplicado: {{ tripled_amount }}. </br></br>
+
+            Monto retornado por el participante de rol B: {{ group.sent_back_amount }}.</br></br>
+
+            Tu pago de esta ronda:</br>
+            {{ Constants.endowment }} - {{ group.sent_amount }} + {{ group.sent_back_amount }} = <strong>{{ player.payoff }}</strong>
 
         </p>
     {% else %}
-        <p>
-            El Participante A le envió {{ group.sent_amount }}.
-            Este monto fue triplicado, por lo que usted recibió {{ tripled_amount }}.
-            Y decidió devolver {{ group.sent_back_amount }}.
+            Dotación: {{ Constants.endowment }} </br></br>
+            Monto enviado por participante de rol A: {{ group.sent_amount }}. </br>
+            Monto enviado triplicado: {{ tripled_amount }}. </br></br>
 
-        </p>
-        <p>
-            A usted se le dio {{ tripled_amount }},
-            y escogió enviar {{ group.sent_back_amount }}
-            Y por lo tanto cuenta con:
-            ({{ tripled_amount }})-({{ group.sent_back_amount }})=<strong>{{ player.payoff }}</strong>
-        </p>
-        .
+            Monto retornado al participante de rol A: {{ group.sent_back_amount }}.</br></br>
+
+            Tu pago de esta ronda:</br>
+            {{ tripled_amount }} - {{ group.sent_back_amount }} = <strong>{{ player.payoff }}</strong>
     {% endif %}
 
+    </br></br>
     <p>{% next_button %}</p>
 
     </br></br></br></br>

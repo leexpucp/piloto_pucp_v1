@@ -4,6 +4,7 @@ from otree.api import (
 )
 import random
 
+import config_leex_1
 
 doc = """
 This is a standard 2-player trust game where the amount sent by player 1 gets
@@ -17,12 +18,12 @@ tripled. The trust game was first proposed by
 class Constants(BaseConstants):
     name_in_url = 'trust'
     players_per_group = 2
-    num_rounds = 2
+    num_rounds = config_leex_1.TG_number_rounds
 
     instructions_template = 'trust/Instructions.html'
 
     # Initial amount allocated to each player
-    endowment = c(5)
+    endowment = c(config_leex_1.TG_endowment)
     multiplication_factor = 3
 
 

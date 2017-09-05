@@ -2,7 +2,7 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Tu elección
+    Tu elección (Ronda {{ group.round_number }})
 {% endblock %}
 
 {% block content %}
@@ -11,7 +11,7 @@
     Se te ha asignado el rol B. De los {{Constants.endowment}}, rol A ha enviado {{group.sent_amount}}.
     Este monto se ha multiplicado por {{ Constants.multiplication_factor }} convirtiendose en {{tripled_amount}}.
     </br></br>
-    Cuánto deseas enviar de retorno al participante A?
+    De los {{tripled_amount}}, cuánto deseas enviar de retorno al participante A?
 
 </p>
 
