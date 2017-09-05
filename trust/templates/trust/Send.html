@@ -8,14 +8,16 @@
 {% block content %}
 
     <p>
-        Usted es el participante A. Ahora cuentas con {{Constants.endowment}}. Cuánto del monto otorgado te gustaría enviar al participante B?
+        Se te ha asignado el rol A. Cuentas con {{Constants.endowment}}.
+        Cuánto deseas enviar al participante B?
     </p>
 
-    {% formfield group.sent_amount with label="Por favor, ingrese un monto entre 0 a 5:" %}
+    {% formfield group.sent_amount with label="Por favor, ingrese el monto aquí:" %}
     <p>
     {% next_button %}
     </p>
 
+    </br></br></br></br>
     {% include Constants.instructions_template %}
 
 {% endblock %}

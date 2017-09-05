@@ -6,15 +6,20 @@
 {% endblock %}
 
 {% block content %}
+
 <p>
-    Usted es el participante B.
-    El participante A le acaba de enviar {{group.sent_amount}} por lo que usted ha recibido {{tripled_amount}}.
-    Ahora usted cuenta con {{tripled_amount}}.
-    Cuánto de este monto te gustaría devolver al participante A?
+    Se te ha asignado el rol B. De los {{Constants.endowment}}, rol A ha enviado {{group.sent_amount}}.
+    Este monto se ha multiplicado por {{ Constants.multiplication_factor }} convirtiendose en {{tripled_amount}}.
+    </br></br>
+    Cuánto deseas enviar de retorno al participante A?
+
 </p>
 
-    {% formfield group.sent_back_amount with label=prompt %}
+    {% formfield group.sent_back_amount with label="Por favor, ingrese el monto aquí:" %}
+
     <p>{% next_button %}</p>
+
+    </br></br></br></br>
     {% include Constants.instructions_template %}
 
 {% endblock %}

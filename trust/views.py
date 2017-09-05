@@ -47,9 +47,8 @@ class SendBack(Page):
         amount=Constants.endowment
 
         return {
-                'tripled_amount': tripled_amount,
-                'prompt':
-                    'Por favor introduzca un monto de 0 a %s:' % tripled_amount}
+                'tripled_amount': tripled_amount
+        }
 
     def sent_back_amount_max(self):
         return self.group.sent_amount * Constants.multiplication_factor
