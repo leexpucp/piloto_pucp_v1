@@ -3,26 +3,16 @@ from otree.api import (
     Currency as c, currency_range
 )
 import random
-import csv
 
 
 class Constants(BaseConstants):
     name_in_url = 'survey'
     players_per_group = None
     num_rounds = 1
-    with open('survey/study_field.csv') as f:
-        questions = list(csv.DictReader(f))
 
 
 class Subsession(BaseSubsession):
-    def creating_session(self):
-        if self.round_number == 1:
-            self.session.vars['questions'] = Constants.questions
-        for p in self.get_players():
-            question_data = p.current_question()
-            p.question_id = question_data['id']
-            p.question = question_data['question']
-
+    pass
 class Group(BaseGroup):
     pass
 
