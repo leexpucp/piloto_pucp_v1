@@ -60,3 +60,12 @@ class Player(BasePlayer):
         min=0, max=Constants.endowment,
         doc="""The amount contributed by the player""",
     )
+    def role(self):
+        if self.id_in_group == 1:
+            return 'A'
+        elif self.id_in_group == 2:
+            return 'B'
+        elif self.id_in_group == 3:
+            return 'C'
+        else:
+            return 'D'

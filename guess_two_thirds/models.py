@@ -59,5 +59,15 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    def role(self):
+        if self.id_in_group == 1:
+            return 'A'
+        elif self.id_in_group == 2:
+            return 'B'
+        elif self.id_in_group == 3:
+            return 'C'
+        else:
+            return 'D'
+
     guess = models.PositiveIntegerField(max=Constants.guess_max)
     is_winner = models.BooleanField(initial=False)
