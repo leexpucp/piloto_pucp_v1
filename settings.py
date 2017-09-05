@@ -142,7 +142,7 @@ SESSION_CONFIGS = [
         'real_world_currency_per_point': 0.01,
         'display_name': "LEEX PILOTO",
         'num_demo_participants': 4,
-        'app_sequence': ['ultimatum', 'public_goods', 'trust', 'guess_two_thirds', 'payment_info'],
+        'app_sequence': ['ultimatum', 'public_goods', 'trust', 'guess_two_thirds', 'payment_info', 'survey'],
     },
     {
         'name': 'prueba_aleatorizacion',
@@ -180,6 +180,12 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'app_sequence': ['ultimatum', 'payment_info'],
     },
+     {
+         'name': 'survey',
+         'display_name': "Survey",
+         'num_demo_participants': 1,
+         'app_sequence': ['survey', 'payment_info'],
+     },
     # {
     #      'name': 'dictator',
     #      'display_name': "Dictator Game",

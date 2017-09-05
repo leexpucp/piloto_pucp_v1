@@ -2,18 +2,12 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Encuesta
+    Principal campo de estudio
 {% endblock %}
 
 {% block content %}
 
-    <p>
-        Por favor responda las siguientes preguntas.
-    </p>
-
-    {% for field in form %}
-        {% formfield field %}
-    {% endfor %}
+    {% formfield player.submitted_answer with label=player.question %}
 
     {% next_button %}
 

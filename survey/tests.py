@@ -9,16 +9,16 @@ class PlayerBot(Bot):
 
         yield (views.Demographics, {
             'age': 24,
-            'gender': 'Male'})
+            'gender': 'Masculino'})
 
-        yield (views.CognitiveReflectionTest, {
-            'crt_bat': 10,
-            'crt_widget': 5,
-            'crt_lake': 48
-        })
+        # yield (views.CognitiveReflectionTest, {
+        #     'crt_bat': 10,
+        #     'crt_widget': 5,
+        #     'crt_lake': 48
+        # })
 
         for value in [
-            self.player.crt_bat,
+       #     self.player.crt_bat,
             self.player.payoff
         ]:
             assert value != None
