@@ -3,6 +3,8 @@ from ._builtin import Page, WaitPage
 
 
 class Introduction(Page):
+    wait_for_all_groups = True
+
     def is_displayed(self):
         return self.round_number == 1
 

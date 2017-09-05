@@ -2,12 +2,12 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Contribución
+    Contribución (ronda {{ group.round_number }})
 {% endblock %}
 
 {% block content %}
 
-    {% formfield player.contribution with label="¿Cuánto contribuirás al proyecto (de 0 a 5)?" %}
+    {% formfield player.contribution with label="¿Cuánto contribuirás al proyecto grupal?" %}
 
 
     {% next_button %}

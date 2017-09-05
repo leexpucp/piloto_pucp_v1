@@ -151,10 +151,10 @@ SESSION_CONFIGS = [
         'app_sequence': ['ultimatum', 'guess_two_thirds'],
     },
     {
-        'name': 'public_goods',
-        'display_name': "Public Goods",
+        'name': 'public_goods_n_4',
+        'display_name': "Public Goods N=4",
         'num_demo_participants': 4,
-        'app_sequence': ['public_goods', 'payment_info'],
+        'app_sequence': ['public_goods'],
     },
     {
         'name': 'trust',
@@ -180,7 +180,13 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'app_sequence': ['ultimatum'],
     },
-     {
+    {
+        'name': 'ultimatum_n_4',
+        'display_name': "Ultimatum N=4",
+        'num_demo_participants': 4,
+        'app_sequence': ['ultimatum'],
+    },
+    {
          'name': 'survey',
          'display_name': "Survey",
          'num_demo_participants': 1,
