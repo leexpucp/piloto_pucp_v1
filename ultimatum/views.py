@@ -43,7 +43,8 @@ class Accept(Page):
 class ResultsWaitPage(WaitPage):
     def after_all_players_arrive(self):
         self.group.set_payoffs()
-
+    def before_next_page(self):
+        self.participant.vars['ultimatum_payment'] = self.player.payoff
 
 class Results(Page):
     pass

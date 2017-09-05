@@ -20,8 +20,13 @@ class Subsession(BaseSubsession):
     pass
 
 class Group(BaseGroup):
-    pass
+    # variables that change for each group
+    treatment_endowment = models.IntegerField()
+    treatment_treatment = models.TextField()
 
+    def final_pay(self):
+        p = self.get_player_by_id()
+        p.final_reward = self.treatment_endowment+ p.payoff
 class Player(BasePlayer):
     pass
 
