@@ -135,6 +135,9 @@ SESSION_CONFIG_DEFAULTS = {
     'doc': "",
     'mturk_hit_settings': mturk_hit_settings,
 }
+# self.session.config['Params']
+
+import config_leex_1 # to bring configs
 
 SESSION_CONFIGS = [
     {
@@ -157,9 +160,15 @@ SESSION_CONFIGS = [
         'app_sequence': ['public_goods'],
     },
     {
+        'name': 'public_goods_n_8',
+        'display_name': "Public Goods N=8",
+        'num_demo_participants': 8,
+        'app_sequence': ['public_goods'],
+    },
+    {
         'name': 'trust',
         'display_name': "Trust Game",
-        'num_demo_participants': 4,
+        'num_demo_participants': 2,
         'app_sequence': ['trust', 'payment_info'],
     },
     {
@@ -192,6 +201,14 @@ SESSION_CONFIGS = [
          'num_demo_participants': 1,
          'app_sequence': ['survey', 'payment_info'],
      },
+    {
+        'name': 'Session_Order_1',
+        'display_name': "Session_Order_1 UG PG TG BC",
+        'num_demo_participants': 4,
+            # 'rounds_per_game' : 2,
+        'app_sequence': config_leex_1.app_sequence
+    },
+
     # {
     #      'name': 'dictator',
     #      'display_name': "Dictator Game",

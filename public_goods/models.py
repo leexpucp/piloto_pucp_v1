@@ -3,6 +3,8 @@ from otree.api import (
     Currency as c, currency_range
 )
 import random
+import config_leex_1
+
 
 doc = """
 This is a one-period public goods game with 3 players.
@@ -12,14 +14,13 @@ This is a one-period public goods game with 3 players.
 class Constants(BaseConstants):
     name_in_url = 'public_goods'
     players_per_group = 4
-    num_rounds = 10
+    num_rounds = config_leex_1.PG_number_rounds
 
     instructions_template = 'public_goods/Instructions.html'
 
     # """Amount allocated to each player"""
-    endowment = c(10)
+    endowment = c(config_leex_1.PG_endowment)
     multiplier = 2
-
 
 class Subsession(BaseSubsession):
     def creating_session(self):

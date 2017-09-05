@@ -3,6 +3,7 @@ from otree.api import (
     Currency as c, currency_range
 )
 import random
+import config_leex_1
 
 doc = """
 Ultimatum game with two treatments: direct response 
@@ -15,18 +16,22 @@ response to offers other than the one that is made.
 class Constants(BaseConstants):
     name_in_url = 'ultimatum'
     players_per_group = 2
-    num_rounds = 10
+    num_rounds = config_leex_1.UG_number_rounds ## Notice this come from a config file
 
     instructions_template = 'ultimatum/Instructions.html'
 
-    endowment = c(10)
+    endowment = c(config_leex_1.UG_endowment) ## Notice this come from a config file
+
     payoff_if_rejected = c(0)
+
     offer_increment = c(1)
 
     offer_choices = currency_range(0, endowment, offer_increment)
+
     offer_choices_count = len(offer_choices)
 
     keep_give_amounts = []
+
     for offer in offer_choices:
         keep_give_amounts.append((offer, endowment - offer))
 

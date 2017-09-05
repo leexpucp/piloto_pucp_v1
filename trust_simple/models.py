@@ -3,7 +3,7 @@ from otree.api import (
     Currency as c, currency_range
 )
 import random
-
+import config_leex_1
 
 doc = """
 Simple trust game
@@ -13,9 +13,9 @@ Simple trust game
 class Constants(BaseConstants):
     name_in_url = 'trust_simple'
     players_per_group = 2
-    num_rounds = 1
+    num_rounds = config_leex_1.TG_number_rounds
 
-    endowment = c(10)
+    endowment = c(config_leex_1.TG_endowment)
     multiplication_factor = 3
 
     instructions_template = 'trust_simple/Instructions.html'
