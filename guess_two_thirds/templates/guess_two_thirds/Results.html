@@ -2,23 +2,27 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
+    <p style="color:lightgrey"> Ronda {{ group.round_number }} </p>
     Resultados
 {% endblock %}
 
 {% block content %}
-
-    <p>Estos fueron los números seleccionados:</p>
-
     <p>
-        {{ sorted_guesses }}
+        Estos fueron los números seleccionados: {{ sorted_guesses }} </br>
     </p>
 
     <p>
-        Los 2/3 del promedio de estos números es {{ group.two_thirds_avg }};
-        la elección más próxima fue {{ group.best_guess }}.
+        El promedio de los números seleccionados: {{ group.average }} </br>
     </p>
 
-    <p>El número que seleccionó fue {{ player.guess }}.</p>
+    <p>
+        Los 2/3 del promedio de estos números es: {{ group.two_thirds_avg }};
+    </p>
+    <p>
+        La elección más próxima fue {{ group.best_guess }}.
+    </p>
+
+    <p>El número tu seleccionaste fue: {{ player.guess }}.</p>
 
     <p>
         {% if player.is_winner %}
@@ -26,16 +30,18 @@
                 Por lo tanto, es uno de los {{ group.num_winners }} ganadores
                 que empataron en la elección más próxima.
             {% else %}
-                Por lo tanto, ¡usted gana!
+                Por lo tanto, ¡tu ganas esta ronda!
             {% endif %}
         {% else %}
-            Por lo tanto, no ganó.
+            Por lo tanto, no ganaste esta ronda.
         {% endif %}
-    Su pago es de {{ player.payoff }}.
+    Tu pago de la ronda es: {{ player.payoff }}.
     </p>
 
+    </br></br>
     {% next_button %}
 
+    </br></br></br></br>
     {% include Constants.instructions_template %}
 
 {% endblock %}

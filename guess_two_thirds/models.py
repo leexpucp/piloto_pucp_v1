@@ -41,6 +41,7 @@ class Group(BaseGroup):
     def set_payoffs(self):
         players = self.get_players()
         guesses = [p.guess for p in players]
+        average = sum(guesses) / len(players)
         two_thirds_avg = (2 / 3) * sum(guesses) / len(players)
         self.two_thirds_avg = round(two_thirds_avg, 2)
 

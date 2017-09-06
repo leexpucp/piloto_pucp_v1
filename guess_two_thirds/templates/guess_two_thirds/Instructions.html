@@ -3,7 +3,7 @@
 <div class="instructions well well-lg">
 
     <h3 class="panel-sub-heading">
-        Instrucciones
+        Instrucciones <font color="green"> (BC) </font>
     </h3>
 
     <p>
@@ -18,15 +18,18 @@
         Cada Ronda
     </h4>
     <p>
-        Al inicio de cada ronda, a cada uno se le pedirá escoger un número entre 0 y {{ Constants.guess_max }}.
-        El ganador será el participante que haya elegido el número más cercano a los 2/3 del promedio
-        de los números elegidos.
+        Al inicio de cada ronda, cada participante escogerá un número entero entre 0 y {{ Constants.guess_max }}.
+        Después que todos han reportado sus números escogidos, la computadora calcula el promedio de todos los
+        números del grupo. Luego, la computadora calcula los dos tercios (2/3) de ese promedio.
+        El miembro que haya elegido el número más cercano a dicha magnitud (los 2/3 del promedio)
+        será declarado el ganador de la ronda.
     </p>
 
     <p>
         El ganador recibirá {{ Constants.jackpot }}. En caso de empate, los {{ Constants.jackpot }}
         serán igualmente divididos entre los ganadores.
     </p>
+
 
     <!--<p> Este juego se desarrollará en {{ Constants.num_rounds }} rondas.</p>-->
 

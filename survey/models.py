@@ -29,13 +29,13 @@ class Player(BasePlayer):
         min=13, max=125)
 
     gender = models.CharField(
-        choices=['Masculino', 'Femenino'],
+        choices=['Masculino', 'Femenino', 'Otro'],
         verbose_name='¿Cuál es tu género?',
         widget=widgets.RadioSelect())
 
     provincia= models.CharField(
         verbose_name='¿Indique la provincia en la que reside?',
-        choices=['Lima', 'Callao', 'otro'],
+        choices=['Lima', 'Callao', 'Otro'],
         widget=widgets.RadioSelect )
     distrito = models.PositiveIntegerField(
         choices=[
@@ -83,8 +83,9 @@ class Player(BasePlayer):
             [41, 'Surquillo'],
             [42, 'Villa El Salvador'],
             [43, 'Villa María del Triunfo'],
+            [99, 'Otro / No Aplica']
         ],
-        verbose_name='¿Cuál es su distrito de residencia? (seleccione solo si su provincia de residencia es Lima Metropolitana o el Callao)',
+        verbose_name='¿Cuál es su distrito de residencia? (seleccione otro si su provincia de residencia no es Lima Metropolitana ni el Callao)',
     )
 
 
@@ -128,6 +129,7 @@ class Player(BasePlayer):
             [36, 'Odontología'],
             [37, 'Tecnología Médica'],
             [38, 'Antropología'],
+            [99, 'Otro / No Aplica']
         ],
         verbose_name='¿Cuál es su principal campo de estudios?',
     )

@@ -2,6 +2,7 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
+    <p style="color:lightgrey"> Ronda {{ group.round_number }} </p>
     Su elección
 {% endblock %}
 
@@ -15,8 +16,10 @@
     {% endif %}
 
     {% formfield player.guess with label="Por favor seleccione un número entre 0 y 100:" %}
+    </br></br>
     {% next_button %}
 
+    </br></br></br></br>
     {% include Constants.instructions_template %}
 
 {% endblock %}
