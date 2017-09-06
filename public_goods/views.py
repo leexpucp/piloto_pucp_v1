@@ -2,7 +2,7 @@ from . import models
 from ._builtin import Page, WaitPage
 from otree.api import Currency as c, currency_range
 from .models import Constants
-
+import config_leex_1
 
 class Introduction(Page):
     def is_displayed(self):
@@ -31,6 +31,12 @@ class Results(Page):
         return {
             'total_earnings': self.group.total_contribution * Constants.multiplier,
         }
+
+    def before_next_page(self):
+        if config_leex_1.paid_game == Constants.name_in_url and config_leex_1.paid_round == self.round_number:
+            self.player.payoff = self.player.payoff
+        else:
+            self.player.payoff = 0
 
 
 page_sequence = [

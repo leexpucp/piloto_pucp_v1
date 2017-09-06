@@ -2,7 +2,7 @@ from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from . import models
 from .models import Constants
-
+import config_leex_1
 
 class Introduction(Page):
     wait_for_all_groups = True
@@ -66,6 +66,12 @@ class Results(Page):
         return {
             'tripled_amount': self.group.sent_amount * Constants.multiplication_factor
         }
+
+    def before_next_page(self):
+        if config_leex_1.paid_game == Constants.name_in_url and config_leex_1.paid_round == self.round_number:
+            self.player.payoff = self.player.payoff
+        else:
+            self.player.payoff = 0
 
 
 page_sequence = [
