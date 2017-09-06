@@ -19,3 +19,7 @@ BC_number_rounds = 2
 BC_endowment = 10
 
 
+# paid_game in ['ultimatum', 'public_goods', 'trust', 'guess_two_thirds']
+paid_game = 'ultimatum'
+
+paid_round = 1
