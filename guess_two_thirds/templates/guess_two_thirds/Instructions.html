@@ -7,20 +7,27 @@
     </h3>
 
     <p>
-        Usted se encuentra en un grupo de {{ Constants.players_per_group }} personas.
-        A cada uno se le pedirá escoger un
-        número entre 0 y {{ Constants.guess_max }}.
-        El ganador será el participante que haya elegido
-        el número más cercano a los 2/3 del promedio
+        En esta parte del experiemnto vas a participar en {{ Constants.num_rounds }} rondas de la misma interacción.
+        Antes de la primera ronda, todos los participantes serán agrupdos en grupos de {{ Constants.players_per_group }} personas.
+        <strong>Los integrantes de cada grupo serán los mismos para todas las rondas de la interacción.</strong>
+        Es decir los grupos se mantendrán fijos durante todo el bloque.
+        Además, este agrupamiento se realizará al azar y de forma anónima. Es decir, ningún participante
+        sabrá quiénes son los miembros de su grupo ni durante ni después del experimento.
+    </p>
+    <h4 class="panel-sub-heading">
+        Cada Ronda
+    </h4>
+    <p>
+        Al inicio de cada ronda, a cada uno se le pedirá escoger un número entre 0 y {{ Constants.guess_max }}.
+        El ganador será el participante que haya elegido el número más cercano a los 2/3 del promedio
         de los números elegidos.
     </p>
 
     <p>
-        El ganador recibirá {{ Constants.jackpot }}.
-        En caso de empate, los {{ Constants.jackpot }}
+        El ganador recibirá {{ Constants.jackpot }}. En caso de empate, los {{ Constants.jackpot }}
         serán igualmente divididos entre los ganadores.
     </p>
 
-    <p> Este juego se desarrollará en {{ Constants.num_rounds }} rondas.</p>
+    <!--<p> Este juego se desarrollará en {{ Constants.num_rounds }} rondas.</p>-->
 
 </div>

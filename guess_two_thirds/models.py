@@ -1,8 +1,8 @@
 from otree.api import (
     models, widgets, BaseConstants, BaseSubsession, BaseGroup, BasePlayer,
-    Currency
+    Currency as c,
 )
-
+import config_leex_1
 
 doc = """
 a.k.a. Keynesian beauty contest.
@@ -16,12 +16,12 @@ See https://en.wikipedia.org/wiki/Guess_2/3_of_the_average
 
 class Constants(BaseConstants):
     players_per_group = 4     #poner 8 o 16
-    num_rounds = 2
+    num_rounds = config_leex_1.PG_number_rounds
     name_in_url = 'guess_two_thirds'
 
-    jackpot = Currency(5)
+    jackpot = c(config_leex_1.PG_endowment)
     guess_max = 100
-
+    #endowment = c(config_leex_1.PG_endowment)
     instructions_template = 'guess_two_thirds/Instructions.html'
 
 
