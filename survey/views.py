@@ -13,15 +13,16 @@ class Demographics(Page):
                    'distrito',]
 
 
-# class CognitiveReflectionTest(Page):
-#     form_model = models.Player
-#     form_fields = ['crt_bat',
-#                    'crt_widget',
-#                    'crt_lake']
+class gracias(Page):
+
+    def vars_for_template(self):
+        participant = self.participant
+        return {
+            'redemption_code': participant.label or participant.code,
+        }
 
 
 page_sequence = [
     Demographics,
-    #Question,
-    #CognitiveReflectionTest
+    gracias,
 ]
