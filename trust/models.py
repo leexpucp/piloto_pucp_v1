@@ -51,5 +51,7 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
 
+    round_payoff = models.FloatField()
+
     def role(self):
         return {1: 'A', 2: 'B'}[self.id_in_group]

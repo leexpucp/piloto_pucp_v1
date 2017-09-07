@@ -20,12 +20,20 @@ class ResultsWaitPage(WaitPage):
 
 
 class Results(Page):
+
     def vars_for_template(self):
         sorted_guesses = sorted(p.guess for p in self.group.get_players())
 
-        return {'sorted_guesses': sorted_guesses}
+        return {
+            'sorted_guesses': sorted_guesses,
+            'average': self.group.average
+        }
 
     def before_next_page(self):
+
+        # pass payoff to new var
+        self.player.round_payoff = self.player.payoff
+
         if config_leex_1.paid_game == 'guess_two_thirds' and config_leex_1.paid_round == self.round_number:
             self.player.payoff = self.player.payoff
         else:

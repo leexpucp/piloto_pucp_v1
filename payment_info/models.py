@@ -23,6 +23,8 @@ class Group(BaseGroup):
     pass
 
 class Player(BasePlayer):
-    pass
+    round_payoff = models.FloatField()
+
+
 
 

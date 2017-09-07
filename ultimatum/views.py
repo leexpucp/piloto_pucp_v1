@@ -49,7 +49,12 @@ class ResultsWaitPage(WaitPage):
 
 class Results(Page):
 
+
     def before_next_page(self):
+
+        # pass payoff to new var
+        self.player.round_payoff = self.player.payoff
+
         if config_leex_1.paid_game == Constants.name_in_url and config_leex_1.paid_round == self.round_number:
             self.player.payoff = self.player.payoff
         else:

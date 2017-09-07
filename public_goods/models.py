@@ -61,6 +61,8 @@ class Player(BasePlayer):
         min=0, max=Constants.endowment,
         doc="""The amount contributed by the player""",
     )
+    round_payoff = models.FloatField()
+
     def role(self):
         if self.id_in_group == 1:
             return 'A'

@@ -16,12 +16,15 @@ See https://en.wikipedia.org/wiki/Guess_2/3_of_the_average
 
 class Constants(BaseConstants):
     players_per_group = 4     #poner 8 o 16
-    num_rounds = config_leex_1.PG_number_rounds
+
+    num_rounds = config_leex_1.BC_number_rounds
+
     name_in_url = 'guess_two_thirds'
 
-    jackpot = c(config_leex_1.PG_endowment)
+    jackpot = c(config_leex_1.BC_jackpot)
+
     guess_max = 100
-    #endowment = c(config_leex_1.PG_endowment)
+
     instructions_template = 'guess_two_thirds/Instructions.html'
 
 
@@ -35,14 +38,17 @@ class Subsession(BaseSubsession):
 
 class Group(BaseGroup):
     two_thirds_avg = models.FloatField()
+    average = models.FloatField()
     best_guess = models.PositiveIntegerField()
     num_winners = models.PositiveIntegerField()
+
+
 
     def set_payoffs(self):
         players = self.get_players()
         guesses = [p.guess for p in players]
         average = sum(guesses) / len(players)
-        two_thirds_avg = (2 / 3) * sum(guesses) / len(players)
+        two_thirds_avg = (2 / 3) * average
         self.two_thirds_avg = round(two_thirds_avg, 2)
 
         self.best_guess = min(guesses,
@@ -60,6 +66,9 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+
+    round_payoff = models.FloatField()
+
     def role(self):
         if self.id_in_group == 1:
             return 'A'

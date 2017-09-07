@@ -129,15 +129,17 @@ mturk_hit_settings = {
 # the session config can be accessed from methods in your apps as self.session.config,
 # e.g. self.session.config['participation_fee']
 
+import config_leex_1 # to bring configs
+
+
 SESSION_CONFIG_DEFAULTS = {
     'real_world_currency_per_point': 0.01,
-    'participation_fee': 0.00,
+    'participation_fee': config_leex_1.participation_fee ,
     'doc': "",
     'mturk_hit_settings': mturk_hit_settings,
 }
 # self.session.config['Params']
 
-import config_leex_1 # to bring configs
 
 SESSION_CONFIGS = [
     {
@@ -204,7 +206,7 @@ SESSION_CONFIGS = [
     {
         'name': 'Session_Real',
         'display_name': "Session Real LEEX 1",
-        'num_demo_participants': 4,
+        'num_demo_participants': 2,
             # 'rounds_per_game' : 2,
         'app_sequence': config_leex_1.app_sequence
     },
