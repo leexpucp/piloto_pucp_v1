@@ -15,7 +15,7 @@ See https://en.wikipedia.org/wiki/Guess_2/3_of_the_average
 
 
 class Constants(BaseConstants):
-    players_per_group = 4     #poner 8 o 16
+    players_per_group = 8     #poner 8 o 16
 
     num_rounds = config_leex_1.BC_number_rounds
 

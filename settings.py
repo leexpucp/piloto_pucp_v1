@@ -206,7 +206,7 @@ SESSION_CONFIGS = [
     {
         'name': 'Session_Real',
         'display_name': "Session Real LEEX 1",
-        'num_demo_participants': 2,
+        'num_demo_participants': 16,
             # 'rounds_per_game' : 2,
         'app_sequence': config_leex_1.app_sequence
     },

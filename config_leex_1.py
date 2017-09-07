@@ -12,31 +12,33 @@ paid_game_display = {
 # GAME PARAMETERS
 
 # GAME ORDER. Change every session!
-# app_sequence = ['trust', 'ultimatum', 'public_goods', 'guess_two_thirds', 'payment_info', 'survey']
+app_sequence = ['public_goods', 'trust', 'ultimatum', 'guess_two_thirds', 'payment_info', 'survey']
 #
 # participation_fee (soles)
-# participation_fee = 5
-#
+participation_fee = 5
+
+
 # # ultimatum game  params
-# UG_number_rounds = 10
-# UG_endowment = 20
+UG_number_rounds = 10
+UG_endowment = 20
 #
 # # public goods params
-# PG_number_rounds = 10
-# PG_endowment = 8
+PG_number_rounds = 10
+PG_endowment = 8
 #
 # # trust game
-# TG_number_rounds = 10
-# TG_endowment = 8
+TG_number_rounds = 10
+TG_endowment = 8
 #
 # # guessing game
-# BC_number_rounds = 10
-# BC_jackpot = 20
-#
+BC_number_rounds = 10
+BC_jackpot = 20
+
+
 
 # paid_game in ['ultimatum', 'public_goods', 'trust', 'guess_two_thirds']
-# paid_game = 'ultimatum'
-# paid_round = 3
+paid_game = 'trust'
+paid_round = 5
 
 
 
@@ -64,30 +66,30 @@ paid_game_display = {
 ## TESTING PARAMS  GAME PARAMETERS
 
 # GAME ORDER. Change every session!
-app_sequence = [ 'ultimatum', 'trust',  'payment_info', 'survey']
+#app_sequence = [ 'ultimatum', 'trust',  'payment_info', 'survey']
 #
 # participation_fee (soles)
-participation_fee = 5
+#participation_fee = 5
 
-num_testing_rounds = 2
+#num_testing_rounds = 2
 
 
 # ultimatum game  params
-UG_number_rounds = num_testing_rounds
-UG_endowment = 20
+#UG_number_rounds = num_testing_rounds
+#UG_endowment = 20
 
 # public goods params
-PG_number_rounds = num_testing_rounds
-PG_endowment = 8
+#PG_number_rounds = num_testing_rounds
+#PG_endowment = 8
 
 # trust game
-TG_number_rounds = num_testing_rounds
-TG_endowment = 8
+#TG_number_rounds = num_testing_rounds
+#TG_endowment = 8
 
 # guessing game
-BC_number_rounds = num_testing_rounds
-BC_jackpot = 20
+#BC_number_rounds = num_testing_rounds
+#BC_jackpot = 20
 
 # # paid_game must live in ['ultimatum', 'public_goods', 'trust', 'guess_two_thirds']
-paid_game = 'ultimatum'
-paid_round = 2
+#paid_game = 'ultimatum'
+#paid_round = 2
