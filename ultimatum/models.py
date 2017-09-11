@@ -46,7 +46,7 @@ class Subsession(BaseSubsession):
              #   g.use_strategy_method = random.choice([True, False])
 
 def question(amount):
-    return 'Acepatarías una oferta de {}?'.format(c(amount))
+    return 'Acep    tarías una oferta de {}?'.format(c(amount))
 
 
 class Group(BaseGroup):
