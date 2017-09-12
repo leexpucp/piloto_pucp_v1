@@ -14,7 +14,10 @@ class Introduction(Page):
 class Offer(Page):
     form_model = models.Group
     form_fields = ['amount_offered']
-
+    def vars_for_template(self):
+        return {
+            'player_in_previous_rounds': self.player.in_previous_rounds(),
+        }
     def is_displayed(self):
         return self.player.id_in_group == 1
 
@@ -26,19 +29,13 @@ class WaitForProposer(WaitPage):
 class Accept(Page):
     form_model = models.Group
     form_fields = ['offer_accepted']
+    def vars_for_template(self):
+        return {
+            'player_in_previous_rounds': self.player.in_previous_rounds(),
+        }
 
     def is_displayed(self):
         return self.player.id_in_group == 2   #and not self.group.use_strategy_method
-
-
-#
-# class AcceptStrategy(Page):
-#     form_model = models.Group
-#     form_fields = ['response_{}'.format(int(i)) for i in
-#                    Constants.offer_choices]
-#
-#     def is_displayed(self):
-#         return self.player.id_in_group == 2 and self.group.use_strategy_method
 
 
 class ResultsWaitPage(WaitPage):
@@ -55,11 +52,16 @@ class Results(Page):
         # pass payoff to new var
         self.player.round_payoff = self.player.payoff
 
-        if config_leex_1.paid_game == Constants.name_in_url and config_leex_1.paid_round == self.round_number:
-            self.player.payoff = self.player.payoff
+        if config_leex_1.paid_game == Constants.name_in_url and config_leex_1.paid_round == self.session.vars['paying_round']:
+            self.player.payoff = self.player.round_payoff
+            self.participant.vars['player_payment'] = self.player.round_payoff,
         else:
             self.player.payoff = 0
+            self.participant.vars['player_payment'] = self.player.round_payoff,
 
+        self.participant.vars['player_payment2'] = self.player.real_payoff,
+        self.participant.vars['player_payment'] = self.player.round_payoff,
+        self.session.vars['paying_round'] = self.player.payoff
 
 page_sequence = [Introduction,
                  Offer,

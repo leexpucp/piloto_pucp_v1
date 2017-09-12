@@ -189,13 +189,13 @@ SESSION_CONFIGS = [
         'name': 'ultimatum_n_2',
         'display_name': "Ultimatum N=2",
         'num_demo_participants': 2,
-        'app_sequence': ['ultimatum'],
+        'app_sequence': ['ultimatum', 'payment_info'],
     },
     {
         'name': 'ultimatum_n_4',
         'display_name': "Ultimatum N=4",
         'num_demo_participants': 4,
-        'app_sequence': ['ultimatum'],
+        'app_sequence': ['ultimatum', 'payment_info'],
     },
     {
          'name': 'survey',

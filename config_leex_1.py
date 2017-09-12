@@ -19,7 +19,7 @@ participation_fee = 5
 
 
 # # ultimatum game  params
-UG_number_rounds = 10
+UG_number_rounds = 3
 UG_endowment = 20
 #
 # # public goods params
@@ -37,8 +37,8 @@ BC_jackpot = 20
 
 
 # paid_game in ['ultimatum', 'public_goods', 'trust', 'guess_two_thirds']
-paid_game = 'trust'
-paid_round = 5
+paid_game = 'ultimatum'
+paid_round = 2
 
 
 

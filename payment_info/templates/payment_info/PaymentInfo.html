@@ -13,15 +13,21 @@
 
 {#            <p><strong> </strong></p>#}
 {#            <p>Tus ganancias fueron seleccionadas aleatoriamente de 1 de los 4 juegos en los que participaste</p>#}
-            <p> El bloque que fue aleatoriamente seleccionado para el pago es: {{ paid_game }}. </p>
-            <p> La ronda de ese bloque que fue aleatoriamente seleccionada para pago es {{ paid_round }}. </p>
-{#            <p> Su pago todal de la session es {{ player.payoff }}. </p>#}
-            </br>
+            <table class="table-condensed" style="width:500px; margin-top:20px;">
+                <tr><td>El bloque aleatoriamente seleccionado fue:</td><td>{{ paid_game}}</td></tr>
+                <tr><td>La ronda aleatoriamenta seleccionada fue:</td><td>{{ paid_round}}</td></tr>
+                <tr><td>Tu pago por participar en el experimento es:</td><td>{{ participation_fee}}</td></tr>
+                <tr><td>Tu pago por el juego seleccionado es:</td><td>{{ player_payment}}</td></tr>
+                <tr><td>Tu pago total es:</td><td>{{ total_payment}}</td></tr>
+            </table>
+
+               </br>
             <p> A continuación lo invitamos a llenar un breve cuestionario. </p>
             <p> Luego recibirá instrucciones sobre como sera el proceso de pago.</p>
 
         </div>
     </div>
+
 
     {% next_button %}
 
